@@ -3,6 +3,19 @@ CoreUI - Responsive Admin Theme Bootstrap 4alpha template
 
 Установка
 ------------
+
+Обновите bootstrap до версии 4 (например, внесением в файл composer.json:
+
+```
+"bower-asset/bootstrap": "4.0.0-alpha.5"
+```
+
+а затем вызовите обновление:
+
+```
+composer update
+```
+
 Выполните команду
 
 ```
