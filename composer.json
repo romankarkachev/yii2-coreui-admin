@@ -12,6 +12,8 @@
     }
   ],
   "require": {
+    "rmrevin/yii2-fontawesome:~2.17",
+    "mimicreative/yii2-simple-line-icons": "~1.0",
     "yiisoft/yii2": "*"
   },
   "autoload": {

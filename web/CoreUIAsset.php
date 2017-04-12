@@ -14,8 +14,6 @@ class CoreUIAsset extends BaseAsset
 {
     public $sourcePath = '@romankarkachev/src';
     public $css = [
-        'css/font-awesome.min.css',
-        'css/simple-line-icons.css',
         'css/ptsans.css',
         'css/style.css',
     ];
@@ -23,7 +21,8 @@ class CoreUIAsset extends BaseAsset
         'js/app.js',
     ];
     public $depends = [
-        'yii\bootstrap\BootstrapAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
+        'rmrevin\yii\fontawesome\AssetBundle',
+        'mimicreative\assets\SimpleLineIconsAsset',
+        'romankarkachev\web\BootstrapOnlyJsAsset',
     ];
 }
