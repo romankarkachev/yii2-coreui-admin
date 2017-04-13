@@ -2,7 +2,7 @@
   "name": "romankarkachev/yii2-coreui-admin",
   "description": "CoreUI - Responsive Admin Theme Bootstrap 4a template",
   "keywords": ["template", "yii2", "coreui-admin", "bootstrap 4a"],
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
   "authors": [
