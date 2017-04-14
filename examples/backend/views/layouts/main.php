@@ -4,8 +4,10 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use romankarkachev\widgets\Alert;
 use romankarkachev\widgets\Sidebar;
-use yii\widgets\Breadcrumbs;
+use romankarkachev\widgets\Breadcrumbs;
+//use yii\widgets\Breadcrumbs;
 use backend\assets\AppAsset;
 
 AppAsset::register($this);
@@ -15,18 +17,13 @@ romankarkachev\web\CoreUIAsset::register($this);
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/romankarkachev/yii2-coreui-admin/src');
 
 $items = [
-    ['label' => 'Сделки', 'icon' => 'fa fa-bars', 'url' => ['/transactions']],
-    ['label' => 'Клиенты', 'icon' => 'fa fa-male', 'url' => ['/counteragents']],
+    ['label' => 'Заявки', 'icon' => 'fa fa-address-book-o', 'url' => ['/orders']],
     [
         'label' => 'Справочники',
         'url' => '#',
         'items' => [
-            ['label' => 'Офисы', 'icon' => 'fa fa-building', 'url' => ['/about']],
-            ['label' => 'Склады в Китае', 'url' => ['/china-warehouses']],
-            ['label' => 'Экспедиторы', 'url' => ['/forwarders']],
-            ['label' => 'Населенные пункты', 'url' => ['/cities']],
-            ['label' => 'Валюта', 'url' => ['/currencies']],
-            ['label' => 'Коды ТН ВЭД', 'url' => ['/hs']],
+            ['label' => 'Коды ФККО', 'icon' => 'fa fa-tint', 'url' => ['/fkko']],
+            ['label' => 'Коды ТН ВЭД', 'icon' => 'fa fa-balance-scale', 'url' => ['/fthcdc']],
         ],
     ],
 ];
@@ -42,7 +39,7 @@ $items = [
     <?= $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/png', 'href' => $directoryAsset . '/img/favicon.png']) ?>
     <?php $this->head() ?>
 </head>
-<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+<body class="app header-fixed sidebar-hidden">
 <?php $this->beginBody() ?>
     <header class="app-header navbar">
         <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">☰</button>
@@ -54,7 +51,7 @@ $items = [
         </ul>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item d-md-down-none">
-                <?= Html::a('<i class="icon-logout"></i>', ['/logout'], ['class' => 'nav-link', 'data-method' => 'post']) ?>
+                <?= Html::a('<i class="icon-logout"></i>', ['/logout'], ['class' => 'nav-link', 'title' => 'Выйти из системы', 'data-method' => 'post']) ?>
 
             </li>
         </ul>
@@ -70,16 +67,15 @@ $items = [
 
             </nav>
         </div>
-
         <main class="main">
             <?= Breadcrumbs::widget([
-                'tag' => 'ol',
-                'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n",
-                'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n",
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                'linksAtRight' => isset($this->params['breadcrumbsRight']) ? $this->params['breadcrumbsRight'] : [],
             ]) ?>
 
             <div class="container-fluid">
+                <?= Alert::widget() ?>
+
                 <?= $content ?>
 
             </div>
@@ -88,7 +84,7 @@ $items = [
     <footer class="app-footer">
         &copy; <?= date('Y') ?> <?= Html::a(Yii::$app->name, ['/']) ?>
 
-        <!--<span class="float-right">Можно справа написать текст</span>-->
+        <span class="float-right">Вы авторизованы как <?= Yii::$app->user->identity->username . (Yii::$app->user->identity->profile->name == null || Yii::$app->user->identity->profile->name == '' ? '' : ' (' . Yii::$app->user->identity->profile->name) . ')' ?>.</span>
     </footer>
 <?php $this->endBody() ?>
 </body>

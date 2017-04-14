@@ -9,13 +9,11 @@ use yii\web\AssetBundle;
  * @author Roman Karkachev <post@romankarkachev.ru>
  * @since 2.0
  */
-class BootstrapOnlyJsAsset extends AssetBundle
+class TetherAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/bootstrap/dist';
+    public $sourcePath = '@bower/tether/dist';
     public $js = [
-        'js/bootstrap.js',
+        'js/tether.js',
     ];
-    public $depends = [
-        'yii\web\JqueryAsset',
-    ];
+    public $depends = [];
 }

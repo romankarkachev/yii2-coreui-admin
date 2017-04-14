@@ -23,6 +23,7 @@ class CoreUIAsset extends BaseAsset
     public $depends = [
         'rmrevin\yii\fontawesome\AssetBundle',
         'mimicreative\assets\SimpleLineIconsAsset',
+        'romankarkachev\web\TetherAsset',
         'romankarkachev\web\BootstrapOnlyJsAsset',
     ];
 }
