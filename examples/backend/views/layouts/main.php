@@ -7,7 +7,6 @@ use yii\helpers\Html;
 use romankarkachev\widgets\Alert;
 use romankarkachev\widgets\Sidebar;
 use romankarkachev\widgets\Breadcrumbs;
-//use yii\widgets\Breadcrumbs;
 use backend\assets\AppAsset;
 
 AppAsset::register($this);
