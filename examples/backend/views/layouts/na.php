@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 backend\assets\AppAsset::register($this);
 
-romankarkachev\web\CoreUIAsset::register($this);
+romankarkachev\coreui\CoreUIAsset::register($this);
 
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/romankarkachev/yii2-coreui-admin/src');
 ?>

@@ -4,14 +4,14 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use romankarkachev\widgets\Alert;
-use romankarkachev\widgets\Sidebar;
-use romankarkachev\widgets\Breadcrumbs;
+use romankarkachev\coreui\widgets\Alert;
+use romankarkachev\coreui\widgets\Sidebar;
+use romankarkachev\coreui\widgets\Breadcrumbs;
 use backend\assets\AppAsset;
 
 AppAsset::register($this);
 
-romankarkachev\web\CoreUIAsset::register($this);
+romankarkachev\coreui\CoreUIAsset::register($this);
 
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/romankarkachev/yii2-coreui-admin/src');
 

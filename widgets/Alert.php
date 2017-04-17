@@ -1,5 +1,5 @@
 <?php
-namespace romankarkachev\widgets;
+namespace romankarkachev\coreui\widgets;
 
 use Yii;
 

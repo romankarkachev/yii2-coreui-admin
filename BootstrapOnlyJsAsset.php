@@ -1,5 +1,5 @@
 <?php
-namespace romankarkachev\web;
+namespace romankarkachev\coreui;
 
 use yii\web\AssetBundle;
 

@@ -1,5 +1,5 @@
 <?php
-namespace romankarkachev\web;
+namespace romankarkachev\coreui;
 
 use yii\web\AssetBundle as BaseAsset;
 
@@ -12,7 +12,7 @@ use yii\web\AssetBundle as BaseAsset;
  */
 class CoreUIAsset extends BaseAsset
 {
-    public $sourcePath = '@romankarkachev/src';
+    public $sourcePath = '@romankarkachev/coreui/src';
     public $css = [
         'css/ptsans.css',
         'css/style.css',
@@ -23,7 +23,7 @@ class CoreUIAsset extends BaseAsset
     public $depends = [
         'rmrevin\yii\fontawesome\AssetBundle',
         'mimicreative\assets\SimpleLineIconsAsset',
-        'romankarkachev\web\TetherAsset',
-        'romankarkachev\web\BootstrapOnlyJsAsset',
+        'romankarkachev\coreui\TetherAsset',
+        'romankarkachev\coreui\BootstrapOnlyJsAsset',
     ];
 }
