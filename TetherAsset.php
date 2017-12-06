@@ -12,6 +12,9 @@ use yii\web\AssetBundle;
 class TetherAsset extends AssetBundle
 {
     public $sourcePath = '@bower/tether/dist';
+    public $css = [
+        'css/tether.css',
+    ];
     public $js = [
         'js/tether.js',
     ];
